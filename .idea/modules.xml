@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/configs-service/configs-service.iml" filepath="$PROJECT_DIR$/configs-service/configs-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/homework-7.iml" filepath="$PROJECT_DIR$/.idea/homework-7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-discovery/service-discovery.iml" filepath="$PROJECT_DIR$/service-discovery/service-discovery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/configs-service/src/src.iml" filepath="$PROJECT_DIR$/configs-service/src/src.iml" />
     </modules>
   </component>
 </project>

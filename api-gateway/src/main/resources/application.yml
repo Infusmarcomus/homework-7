@@ -1,0 +1,53 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  main:
+    banner-mode: console
+
+# Настройки логирования
+logging:
+  level:
+    com.example.apigateway: INFO
+    org.springframework.web: INFO
+    org.springframework.web.client: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %highlight(%-5level) - %cyan(%logger{36}) - %msg%n"
+
+# Настройки Circuit Breaker
+circuit-breaker:
+  user-service:
+    max-failures: 3
+    timeout-ms: 10000
+    reset-timeout-ms: 60000
+  notification-service:
+    max-failures: 3
+    timeout-ms: 10000
+    reset-timeout-ms: 60000
+
+# Настройки Service Discovery
+service-discovery:
+  url: http://localhost:8761
+  timeout-ms: 5000
+  retry-attempts: 3
+
+# Management endpoints (Spring Boot Actuator)
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+    metrics:
+      enabled: true
+
+# Настройки HTTP клиента
+http:
+  client:
+    connect-timeout: 5000
+    read-timeout: 10000
+    max-connections: 100

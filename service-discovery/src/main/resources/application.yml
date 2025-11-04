@@ -1,0 +1,31 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: service-discovery
+
+  main:
+    banner-mode: console
+
+logging:
+  level:
+    com.example.servicediscovery: INFO
+    org.springframework.web: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %highlight(%-5level) - %cyan(%logger{36}) - %msg%n"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+# Настройки Service Discovery
+service-discovery:
+  cleanup-interval: 30000          # Интервал очистки мертвых сервисов (30 сек)
+  heartbeat-timeout: 30000         # Таймаут heartbeat (30 сек)
+  max-instances-per-service: 5     # Максимум инстансов на сервис

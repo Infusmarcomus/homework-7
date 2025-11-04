@@ -10,6 +10,8 @@ import org.springframework.test.context.ActiveProfiles;
 
 import java.time.Instant;
 
+import static com.example.common.dto.UserEventDto.EventType.USER_CREATED;
+import static com.example.common.dto.UserEventDto.EventType.USER_DELETED;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 
@@ -27,7 +29,7 @@ class UserEventsConsumerTest {
     void consumeUserEvent_WithUserCreatedEvent_ShouldSendWelcomeEmail() {
         // Given
         UserEventDto userCreatedEvent = new UserEventDto(
-                "USER_CREATED",
+                USER_CREATED,
                 "test.kafka@example.com",
                 Instant.now()
         );
@@ -44,7 +46,7 @@ class UserEventsConsumerTest {
     void consumeUserEvent_WithUserDeletedEvent_ShouldSendGoodbyeEmail() {
         // Given
         UserEventDto userDeletedEvent = new UserEventDto(
-                "USER_DELETED",
+                USER_DELETED,
                 "test.kafka@example.com",
                 Instant.now()
         );
@@ -61,7 +63,7 @@ class UserEventsConsumerTest {
     void consumeUserEvent_WithUnknownEventType_ShouldNotSendAnyEmail() {
         // Given
         UserEventDto unknownEvent = new UserEventDto(
-                "UNKNOWN_EVENT",
+                UserEventDto.EventType.UNKNOWN_EVENT,
                 "test.kafka@example.com",
                 Instant.now()
         );

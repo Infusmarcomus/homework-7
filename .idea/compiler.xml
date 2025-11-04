@@ -7,9 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="common-dto" />
-        <module name="notification-service" />
+        <module name="configs-service" />
         <module name="user-service" />
+        <module name="common-dto" />
+        <module name="common-dto (1) (com.example)" />
+        <module name="notification-service" />
+        <module name="service-discovery" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -21,7 +24,10 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="common-dto" options="-parameters" />
+      <module name="common-dto (1) (com.example)" options="-parameters" />
+      <module name="configs-service" options="-parameters" />
       <module name="notification-service" options="-parameters" />
+      <module name="service-discovery" options="-parameters" />
       <module name="user-service" options="-parameters" />
     </option>
   </component>

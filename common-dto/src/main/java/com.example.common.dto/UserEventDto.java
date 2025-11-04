@@ -19,7 +19,8 @@ public record UserEventDto(
     public enum EventType {
         USER_CREATED,
         USER_UPDATED,
-        USER_DELETED
+        USER_DELETED,
+        UNKNOWN_EVENT
     }
 
     // Фабричные методы
@@ -33,5 +34,9 @@ public record UserEventDto(
 
     public static UserEventDto deleted(String email) {
         return new UserEventDto(EventType.USER_DELETED, email, Instant.now());
+    }
+
+    public static UserEventDto unknown(String email) {
+        return new UserEventDto(EventType.UNKNOWN_EVENT, email, Instant.now());
     }
 }

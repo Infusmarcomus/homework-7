@@ -8,7 +8,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.3.3</version>
+        <version>3.2.0</version>  <!-- Приводим к одной версии -->
         <relativePath/>
     </parent>
 
@@ -16,9 +16,6 @@
     <artifactId>common-dto</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
-
-    <name>common-dto</name>
-    <description>Common DTO module for microservices</description>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -39,6 +36,12 @@
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-jsr310</artifactId>
+        </dependency>
+
+        <!-- Добавляем Spring Boot зависимости -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
     </dependencies>
 </project>
